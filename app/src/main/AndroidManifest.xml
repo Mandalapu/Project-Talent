@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.projecttalentoriginal"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/cogusa_icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AgreementActivity"
+            android:label="@string/title_activity_agreement" />
+        <activity
+            android:name=".SoundCheck_Activity"
+            android:label="@string/title_activity_sound_check_" />
+        <activity
+            android:name=".AudioRecordTest"
+            android:label="@string/title_activity_audio_record_test" />
+        <activity
+            android:name=".SecD_Activity"
+            android:label="@string/title_activity_sec_d_" />
+        <activity
+            android:name=".WordRecall_Activity"
+            android:label="@string/title_activity_word_recall_" />
+        <activity
+            android:name=".WordRecallAudio_Activity"
+            android:label="@string/title_activity_word_recall_audio_" />
+        <activity
+            android:name=".WordRecallRecord_Activity"
+            android:label="@string/title_activity_word_recall_record_" />
+        <activity
+            android:name=".BackwardCount_Activity"
+            android:label="@string/title_activity_backward_count_" />
+        <activity
+            android:name=".BackwardCountRecord_Activity"
+            android:label="@string/title_activity_backward_count_record_" />
+        <activity
+            android:name=".NS143_Activity"
+            android:label="@string/title_activity_ns143_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".NS144_Activity"
+            android:label="@string/title_activity_ns144_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".NS145_Activity"
+            android:label="@string/title_activity_ns145_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".NS146_Activity"
+            android:label="@string/title_activity_ns146_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".WordRecallAgain_Activity"
+            android:label="@string/title_activity_word_recall_again_" />
+        <activity
+            android:name=".NumberQuestions_Activity"
+            android:label="@string/title_activity_number_questions_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".NumberQuestionsNext_Activity"
+            android:label="@string/title_activity_number_questions_next_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".SecDLast_Activity"
+            android:label="@string/title_activity_sec_dlast_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".SecRF_Activity"
+            android:label="@string/title_activity_sec_rf_" />
+        <activity
+            android:name=".SecNS_Activity"
+            android:label="@string/title_activity_sec_ns_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".SecNSEx2_Activity"
+            android:label="@string/title_activity_sec_nsex2_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".SecNSEx1AActivity"
+            android:label="@string/title_activity_sec_nsex1_a"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".SecNSEx2A_Activity"
+            android:label="@string/title_activity_sec_nsex2_a_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".SecNSIntro_Activity"
+            android:label="@string/title_activity_sec_nsintro_" />
+        <activity
+            android:name=".Set3Item1Activity"
+            android:label="@string/title_activity_set3_item1"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Set3Item2_Activity"
+            android:label="@string/title_activity_set3_item2_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Set3Item3_Activity"
+            android:label="@string/title_activity_set3_item3_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Set1Item1_Activity"
+            android:label="@string/title_activity_set1_item1_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Set1Item2_Activity"
+            android:label="@string/title_activity_set1_item2_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Set1Item3_Activity"
+            android:label="@string/title_activity_set1_item3_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Set2Item1_Activity"
+            android:label="@string/title_activity_set2_item1_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Set2Item2_Activity"
+            android:label="@string/title_activity_set2_item2_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Set2Item3_Activity"
+            android:label="@string/title_activity_set2_item3_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Set4Item1_Activity"
+            android:label="@string/title_activity_set4_item1_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Set5Item1_Activity"
+            android:label="@string/title_activity_set5_item1_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Set4Item2_Activity"
+            android:label="@string/title_activity_set4_item2_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Set4Item3_Activity"
+            android:label="@string/title_activity_set4_item3_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Set5Item2_Activity"
+            android:label="@string/title_activity_set5_item2_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Set5Item3_Activity"
+            android:label="@string/title_activity_set5_item3_"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".SecAR_Activity"
+            android:label="@string/title_activity_sec_ar_" />
+        <activity
+            android:name=".ARans1_Activity"
+            android:label="@string/title_activity_arans1_" />
+        <activity
+            android:name=".ARpractice1_Activity"
+            android:label="@string/title_activity_arpractice1_" />
+        <activity
+            android:name=".ARpracticeCorrect_Activity"
+            android:label="@string/title_activity_arpractice_correct_" />
+        <activity
+            android:name=".ARpracticeWrong_Activity"
+            android:label="@string/title_activity_arpractice_wrong_" />
+        <activity
+            android:name=".ARpractice2_Activity"
+            android:label="@string/title_activity_arpractice2_" />
+        <activity
+            android:name=".ARpracrice2ans_Activity"
+            android:label="@string/title_activity_arpracrice2ans_" />
+        <activity
+            android:name=".ARpractice2ans_Activity"
+            android:label="@string/title_activity_arpractice2ans_" />
+        <activity
+            android:name=".ARIntro_Activity"
+            android:label="@string/title_activity_arintro_" />
+        <activity
+            android:name=".AR31_Activity"
+            android:label="@string/title_activity_ar31_" />
+        <activity
+            android:name=".AR32_Activity"
+            android:label="@string/title_activity_ar32_" />
+        <activity
+            android:name=".AR33_Activity"
+            android:label="@string/title_activity_ar33_" />
+        <activity
+            android:name=".AR11_Activity"
+            android:label="@string/title_activity_ar11_" />
+        <activity
+            android:name=".AR12_Activity"
+            android:label="@string/title_activity_ar12_" />
+        <activity
+            android:name=".AR13_Activity"
+            android:label="@string/title_activity_ar13_" />
+        <activity
+            android:name=".AR21_Activity"
+            android:label="@string/title_activity_ar21_" />
+        <activity
+            android:name=".AR22_Activity"
+            android:label="@string/title_activity_ar22_" />
+        <activity
+            android:name=".AR23_Activity"
+            android:label="@string/title_activity_ar23_" />
+        <activity
+            android:name=".AR41_Activity"
+            android:label="@string/title_activity_ar41_" />
+        <activity
+            android:name=".AR42_Activity"
+            android:label="@string/title_activity_ar42_" />
+        <activity
+            android:name=".AR43_Activity"
+            android:label="@string/title_activity_ar43_" />
+        <activity
+            android:name=".AR51_Activity"
+            android:label="@string/title_activity_ar51_" />
+        <activity
+            android:name=".AR52_Activity"
+            android:label="@string/title_activity_ar52_" />
+        <activity
+            android:name=".AR53_Activity"
+            android:label="@string/title_activity_ar53_" />
+        <activity
+            android:name=".SecSP_Activity"
+            android:label="@string/title_activity_sec_sp_" />
+        <activity
+            android:name=".SPpractice_Activity"
+            android:label="@string/title_activity_sppractice_" />
+        <activity
+            android:name=".SPpracticeCorrect_Activity"
+            android:label="@string/title_activity_sppractice_correct_" />
+        <activity
+            android:name=".SPpracticeWrong_Activity"
+            android:label="@string/title_activity_sppractice_wrong_" />
+        <activity
+            android:name=".SPIntro_Activity"
+            android:label="@string/title_activity_spintro_" />
+        <activity
+            android:name=".SP31_Activity"
+            android:label="@string/title_activity_sp31_" />
+        <activity
+            android:name=".SP32_Activity"
+            android:label="@string/title_activity_sp32_" />
+        <activity
+            android:name=".SP33_Activity"
+            android:label="@string/title_activity_sp33_" />
+        <activity
+            android:name=".SP11_Activity"
+            android:label="@string/title_activity_sp11_" />
+        <activity
+            android:name=".SP12_Activity"
+            android:label="@string/title_activity_sp12_" />
+        <activity
+            android:name=".SP13_Activity"
+            android:label="@string/title_activity_sp13_" />
+        <activity
+            android:name=".SP21_Activity"
+            android:label="@string/title_activity_sp21_" />
+        <activity
+            android:name=".SP22_Activity"
+            android:label="@string/title_activity_sp22_" />
+        <activity
+            android:name=".SP23_Activity"
+            android:label="@string/title_activity_sp23_" />
+        <activity
+            android:name=".SP41_Activity"
+            android:label="@string/title_activity_sp41_" />
+        <activity
+            android:name=".SP42_Activity"
+            android:label="@string/title_activity_sp42_" />
+        <activity
+            android:name=".SP43_Activity"
+            android:label="@string/title_activity_sp43_" />
+        <activity
+            android:name=".SP51_Activity"
+            android:label="@string/title_activity_sp51_" />
+        <activity
+            android:name=".SP52_Activity"
+            android:label="@string/title_activity_sp52_" />
+        <activity
+            android:name=".SP53_Activity"
+            android:label="@string/title_activity_sp53_" />
+        <activity
+            android:name=".SecSW_ReverseIntro_Activity"
+            android:label="@string/title_activity_sec_sw__reverse_intro_" />
+        <activity
+            android:name=".SecW_Activity"
+            android:label="@string/title_activity_sec_w_" />
+        <activity
+            android:name=".W001_Activity"
+            android:label="@string/title_activity_w001_" />
+        <activity
+            android:name=".W002_Activity"
+            android:label="@string/title_activity_w002_" />
+        <activity
+            android:name=".W003_Activity"
+            android:label="@string/title_activity_w003_" />
+        <activity
+            android:name=".W014_Activity"
+            android:label="@string/title_activity_w014_" />
+        <activity
+            android:name=".W015_Activity"
+            android:label="@string/title_activity_w015_" />
+        <activity
+            android:name=".W016_Activity"
+            android:label="@string/title_activity_w016_" />
+        <activity
+            android:name=".W015sub_Activity"
+            android:label="@string/title_activity_w015sub_" />
+        <activity
+            android:name=".W017_Activity"
+            android:label="@string/title_activity_w017_" />
+        <activity
+            android:name=".W017sub_Activity"
+            android:label="@string/title_activity_w017sub_" />
+        <activity
+            android:name=".W018_Activity"
+            android:label="@string/title_activity_w018_" />
+        <activity
+            android:name=".W019_Activity"
+            android:label="@string/title_activity_w019_" />
+        <activity
+            android:name=".W020_Activity"
+            android:label="@string/title_activity_w020_" />
+        <activity
+            android:name=".W021_Activity"
+            android:label="@string/title_activity_w021_" />
+        <activity
+            android:name=".W0211_Activity"
+            android:label="@string/title_activity_w0211_" />
+        <activity
+            android:name=".W022_Activity"
+            android:label="@string/title_activity_w022_" />
+        <activity
+            android:name=".W004_Activity"
+            android:label="@string/title_activity_w004_" />
+        <activity
+            android:name=".W007_Activity"
+            android:label="@string/title_activity_w007_" />
+        <activity
+            android:name=".W008_Activity"
+            android:label="@string/title_activity_w008_" />
+        <activity
+            android:name=".W010_Activity"
+            android:label="@string/title_activity_w010_" />
+        <activity
+            android:name=".W011_Activity"
+            android:label="@string/title_activity_w011_" />
+        <activity
+            android:name=".W012_Activity"
+            android:label="@string/title_activity_w012_" />
+        <activity
+            android:name=".W013_Activity"
+            android:label="@string/title_activity_w013_" />
+        <activity
+            android:name=".W023_Activity"
+            android:label="@string/title_activity_w023_" />
+        <activity
+            android:name=".SecVO_Activity"
+            android:label="@string/title_activity_sec_vo_" />
+        <activity
+            android:name=".VO31_Activity"
+            android:label="@string/title_activity_vo31_" />
+        <activity
+            android:name=".VO32_Activity"
+            android:label="@string/title_activity_vo32_" />
+        <activity
+            android:name=".VO33_Activity"
+            android:label="@string/title_activity_vo33_" />
+        <activity
+            android:name=".VO12_Activity"
+            android:label="@string/title_activity_vo12_" />
+        <activity
+            android:name=".VO13_Activity"
+            android:label="@string/title_activity_vo13_" />
+        <activity
+            android:name=".VO21_Activity"
+            android:label="@string/title_activity_vo21_" />
+        <activity
+            android:name=".VO22_Activity"
+            android:label="@string/title_activity_vo22_" />
+        <activity
+            android:name=".VO23_Activity"
+            android:label="@string/title_activity_vo23_" />
+        <activity
+            android:name=".VO41_Activity"
+            android:label="@string/title_activity_vo41_" />
+        <activity
+            android:name=".VO42_Activity"
+            android:label="@string/title_activity_vo42_" />
+        <activity
+            android:name=".VO43_Activity"
+            android:label="@string/title_activity_vo43_" />
+        <activity
+            android:name=".VO51_Activity"
+            android:label="@string/title_activity_vo51_" />
+        <activity
+            android:name=".VO52_Activity"
+            android:label="@string/title_activity_vo52_" />
+        <activity
+            android:name=".VO53_Activity"
+            android:label="@string/title_activity_vo53_" />
+        <activity
+            android:name=".VO11_Activity"
+            android:label="@string/title_activity_vo11_"></activity>
+    </application>
+
+</manifest>

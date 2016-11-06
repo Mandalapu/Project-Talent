@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.projecttalentoriginal.AudioRecordTest"
+    android:orientation="vertical">
+
+   <Button
+       android:id="@+id/tbrecord"
+       android:layout_width="150dp"
+       android:layout_height="80dp"
+       android:layout_alignParentBottom="true"
+       android:layout_centerHorizontal="true"
+       android:textSize="24sp"
+       android:layout_marginBottom="281dp"
+       android:onClick="startRecording"
+       android:text="@string/start" />
+
+   <Button
+       android:id="@+id/tbstop"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_above="@+id/tbrecord"
+       android:layout_alignParentLeft="true"
+       android:layout_marginBottom="24dp"
+       android:visibility="invisible" />
+
+   <TextView
+       android:id="@+id/txttime"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_above="@+id/tbstop"
+       android:layout_alignLeft="@+id/seek1"
+       android:layout_margin="10dp"
+       android:textColor="#ff1100"
+       android:visibility="invisible"
+       android:textSize="20sp" />
+
+   <SeekBar
+       android:id="@+id/seek1"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_above="@+id/txttime"
+       android:layout_alignParentRight="true"
+       android:layout_margin="10dp"
+       android:layout_marginBottom="33dp"
+       android:max="15"
+       android:progress="0" />
+
+   <TextView
+       android:id="@+id/question"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_alignParentLeft="true"
+       android:layout_alignParentTop="true"
+       android:layout_marginTop="35dp"
+       android:gravity="center"
+       android:text="@string/soundchk"
+       android:textSize="30sp" />
+   
+   <Button
+        android:id="@+id/button3"
+        android:layout_width="100dp"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="45dp"
+        android:layout_marginRight="39dp"
+        android:background="#1E669B"
+        android:radius="10dp"
+        android:text="@string/button_str"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        android:visibility="invisible" />
+
+   <TextView
+       android:id="@+id/textView1"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_above="@+id/button3"
+       android:layout_alignParentLeft="true"
+       android:layout_marginBottom="85dp"
+       android:gravity="center"
+       android:visibility="invisible"
+       android:text="@string/soundchk_1"
+       android:textSize="30sp" />
+ 
+ </RelativeLayout>

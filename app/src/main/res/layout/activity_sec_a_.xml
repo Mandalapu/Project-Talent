@@ -1,0 +1,96 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.projecttalentoriginal.SecA_Activity" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="83dp"
+        android:layout_marginTop="70dp"
+        android:textSize="30sp"
+        android:text="@string/dob" />
+    
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="100dp"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="45dp"
+        android:layout_marginRight="39dp"
+        android:background="#1E669B"
+        android:radius="10dp"
+        android:text="@string/button_str"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignTop="@+id/month_spinner"
+        android:layout_marginTop="22dp"
+        android:text="@string/month"
+        android:textSize="30sp" />
+
+    <Spinner
+        android:id="@+id/month_spinner"
+        style="?android:attr/spinnerDropDownItemStyle"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/textView1"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="109dp"
+        android:layout_toRightOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_marginLeft="81dp"
+        android:layout_toRightOf="@+id/month_spinner"
+        android:text="@string/day"
+        android:textSize="30sp" />
+
+    <Spinner
+        android:id="@+id/day_spinner"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_alignTop="@+id/month_spinner"
+        android:layout_marginLeft="39dp"
+        android:layout_toRightOf="@+id/textView3"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_marginLeft="89dp"
+        android:layout_toRightOf="@+id/day_spinner"
+        android:text="@string/year"
+        android:textSize="30sp" />
+
+    <Spinner
+        android:id="@+id/year_spinner"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_alignTop="@+id/day_spinner"
+        android:layout_marginLeft="55dp"
+        android:layout_toRightOf="@+id/textView4"
+        android:textSize="50sp" />
+
+</RelativeLayout>
