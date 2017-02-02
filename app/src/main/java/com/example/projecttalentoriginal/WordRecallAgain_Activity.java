@@ -79,6 +79,8 @@ public class WordRecallAgain_Activity extends Activity {
 	    		Date end = new Date();
         		String s = MyGlobalVariables.getData();
         		s+="d148_duration:60;d148_end:"+end.toString()+";";
+				Date sec_d_end = new Date();
+				s += "sec_d_end:"+sec_d_end.toString()+";";
         		MyGlobalVariables.setData(s);
 	    		Intent intent = new Intent(WordRecallAgain_Activity.this, SecAR_Activity.class);
 	    	    startActivity(intent);

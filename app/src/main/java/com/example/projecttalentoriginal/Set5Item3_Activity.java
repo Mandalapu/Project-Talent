@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Environment;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -45,36 +46,65 @@ public class Set5Item3_Activity extends Activity {
 		    	else if(click && !empty)
 		    	{
 		    		click = false;
-		    		String s = MyGlobalVariables.getData();
-            		String ans= s.substring(s.indexOf("nsa51:"));
-            		String[] l = new String[3];
-            		l = ans.split(";");count1=0;
-            		s=s.substring(0,s.indexOf("nsa51:"));
-            		for(int i = 0;i<3;i++){
-            			if(i==0 && l[i].substring(l[i].indexOf(':')+1).equals("17")) {count1++;s+="nsa51_score:1;";s+="nsa51_ans:17;";}
-            			else if(i==1 && l[i].substring(l[i].indexOf(':')+1).equals("7")) {count1++;s+="nsa52_score:1;";s+="nsa52_ans:7;";}
-            			else if(i==2 && l[i].substring(l[i].indexOf(':')+1).equals("72,76")) {count1++;s+="nsa53_score:1;";s+="nsa53_ans:72,76;";}
-            			else if(i==2 && l[i].substring(l[i].indexOf(':')+1).equals("78,82")) {count1++;s+="nsa53_score:1;";s+="nsa53_ans:78,82;";}
-            			else
-            			{
-            				if(i==0){s+="nsa51_score:0;";s+="nsa51_ans:"+l[i].substring(l[i].indexOf(':')+1)+";";}
-            				else if(i==1){s+="nsa52_score:0;";s+="nsa52_ans:"+l[i].substring(l[i].indexOf(':')+1)+";";}
-            				else if(i==2){s+="nsa53_score:0;";s+="nsa53_ans:"+l[i].substring(l[i].indexOf(':')+1)+";";}
-            			}
-            		}
-               		MyGlobalVariables.setData(s);
-            		TextView tv = (TextView) findViewById(R.id.message);
-            		tv.setVisibility(View.INVISIBLE);
-            		Date end = new Date();
-             		 s = MyGlobalVariables.getTime();
-             		s+="nsa53_end:"+end.toString()+";";
-             		s+="sec_ns_end:"+end.toString()+";";
-             		String t=MyGlobalVariables.getData();
-             		t+=s;MyGlobalVariables.setData(t);
-             		MyGlobalVariables.setTime("");
-					create_textfile();
-		    		Intent intent = new Intent(Set5Item3_Activity.this, SecRF_Activity.class);
-		    		startActivity(intent);
+                    try {
+                        String s = MyGlobalVariables.getData();
+                        Log.d("String: ", s);
+                        String ans = s.substring(s.indexOf("nsa51:"));
+                        Log.d("String:", ans);
+                        Log.d("String", "This is very important");
+                        String[] l = new String[3];
+                        l = ans.split(";");
+                        count1 = 0;
+                        s = s.substring(0, s.indexOf("nsa51:"));
+                        for (int i = 0; i < 3; i++) {
+                            if (i == 0 && l[i].substring(l[i].indexOf(':') + 1).equals("17")) {
+                                count1++;
+                                s += "nsa51_score:1;";
+                                s += "nsa51_ans:17;";
+                            } else if (i == 1 && l[i].substring(l[i].indexOf(':') + 1).equals("7")) {
+                                count1++;
+                                s += "nsa52_score:1;";
+                                s += "nsa52_ans:7;";
+                            } else if (i == 2 && l[i].substring(l[i].indexOf(':') + 1).equals("72,76")) {
+                                count1++;
+                                s += "nsa53_score:1;";
+                                s += "nsa53_ans:72,76;";
+                            } else if (i == 2 && l[i].substring(l[i].indexOf(':') + 1).equals("78,82")) {
+                                count1++;
+                                s += "nsa53_score:1;";
+                                s += "nsa53_ans:78,82;";
+                            } else {
+                                if (i == 0) {
+                                    s += "nsa51_score:0;";
+                                    s += "nsa51_ans:" + l[i].substring(l[i].indexOf(':') + 1) + ";";
+                                } else if (i == 1) {
+                                    s += "nsa52_score:0;";
+                                    s += "nsa52_ans:" + l[i].substring(l[i].indexOf(':') + 1) + ";";
+                                } else if (i == 2) {
+                                    s += "nsa53_score:0;";
+                                    s += "nsa53_ans:" + l[i].substring(l[i].indexOf(':') + 1) + ";";
+                                }
+                            }
+                        }
+                        MyGlobalVariables.setData(s);
+                        TextView tv = (TextView) findViewById(R.id.message);
+                        tv.setVisibility(View.INVISIBLE);
+                        Date end = new Date();
+                        s = MyGlobalVariables.getTime();
+                        s += "nsa53_end:" + end.toString() + ";";
+                        s += "sec_ns_end:" + end.toString() + ";";
+                        String t = MyGlobalVariables.getData();
+                        t += s;
+                        MyGlobalVariables.setData(t);
+                        MyGlobalVariables.setTime("");
+                        create_textfile();
+                        Intent intent = new Intent(Set5Item3_Activity.this, SecRF_Activity.class);
+                        startActivity(intent);
+                    }
+                    catch(Exception e)
+                    {
+                        e.printStackTrace();
+                    }
 		    	}
 		     }
 		     public void onFinish() {
@@ -294,67 +324,94 @@ public class Set5Item3_Activity extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
-            	click = true;count++;
-            	EditText uid=(EditText) findViewById(R.id.editText1);
-            	String u=uid.getText().toString();
-            	EditText uid1=(EditText) findViewById(R.id.editText2);
-            	String u1=uid1.getText().toString();
-            	String s = MyGlobalVariables.getData();
-        		if (s.contains("nsa53:")){
-        			int p=s.indexOf("nsa53:");
-        			s = s.substring(0,p);
-        		}
-        		if (u.length()!=0 && u1.length()!=0)
-            	{
-        			s+="nsa53:"+u+","+u1+";";
-            	}
-            	else
-            	{
-            		if(u.length()==0) u = "-1";
-                	if (u1.length()==0) u1 = "-1";
-                	s+="nsa53:"+u+","+u1+";";
-                	
-                		TextView tv = (TextView) findViewById(R.id.message);
-                		String t = getResources().getString(R.string.msg3);
-           				 tv.setText(t);
-           				 tv.setVisibility(View.VISIBLE);
-           				empty=true;
-                	
-            	}
-        		MyGlobalVariables.setData(s);
-        		if((click && count==2)){
-            		click = false;
-            		s = MyGlobalVariables.getData();
-            		String ans= s.substring(s.indexOf("nsa51:"));
-            		String[] l = new String[3];
-            		l = ans.split(";");count1=0;
-            		s=s.substring(0,s.indexOf("nsa51:"));
-            		for(int i = 0;i<3;i++){
-            			if(i==0 && l[i].substring(l[i].indexOf(':')+1).equals("17")) {count1++;s+="nsa51_score:1;";s+="nsa51_ans:17;";}
-            			else if(i==1 && l[i].substring(l[i].indexOf(':')+1).equals("7")) {count1++;s+="nsa52_score:1;";s+="nsa52_ans:7;";}
-            			else if(i==2 && l[i].substring(l[i].indexOf(':')+1).equals("72,76")) {count1++;s+="nsa53_score:1;";s+="nsa53_ans:72,76;";}
-            			else if(i==2 && l[i].substring(l[i].indexOf(':')+1).equals("78,82")) {count1++;s+="nsa53_score:1;";s+="nsa53_ans:78,82;";}
-            			else
-            			{
-            				if(i==0){s+="nsa51_score:0;";s+="nsa51_ans:"+l[i].substring(l[i].indexOf(':')+1)+";";}
-            				else if(i==1){s+="nsa52_score:0;";s+="nsa52_ans:"+l[i].substring(l[i].indexOf(':')+1)+";";}
-            				else if(i==2){s+="nsa53_score:0;";s+="nsa53_ans:"+l[i].substring(l[i].indexOf(':')+1)+";";}
-            			}
-            		}
-               		MyGlobalVariables.setData(s);
-            		TextView tv = (TextView) findViewById(R.id.message);
-            		tv.setVisibility(View.INVISIBLE);
-            		Date end = new Date();
-             		 s = MyGlobalVariables.getTime();
-             		s+="nsa53_end:"+end.toString()+";";
-             		s+="sec_ns_end:"+end.toString()+";";
-             		String t=MyGlobalVariables.getData();
-             		t+=s;MyGlobalVariables.setData(t);
-             		MyGlobalVariables.setTime("");
-					create_textfile();
-            		Intent intent = new Intent(Set5Item3_Activity.this, SecRF_Activity.class);
-               		startActivity(intent);
-            	}
+                try {
+                    click = true;
+                    count++;
+                    EditText uid = (EditText) findViewById(R.id.editText1);
+                    String u = uid.getText().toString();
+                    EditText uid1 = (EditText) findViewById(R.id.editText2);
+                    String u1 = uid1.getText().toString();
+                    String s = MyGlobalVariables.getData();
+                    if (s.contains("nsa53:")) {
+                        int p = s.indexOf("nsa53:");
+                        s = s.substring(0, p);
+                    }
+                    if (u.length() != 0 && u1.length() != 0) {
+                        s += "nsa53:" + u + "," + u1 + ";";
+                    } else {
+                        if (u.length() == 0) u = "-1";
+                        if (u1.length() == 0) u1 = "-1";
+                        s += "nsa53:" + u + "," + u1 + ";";
+
+                        TextView tv = (TextView) findViewById(R.id.message);
+                        String t = getResources().getString(R.string.msg3);
+                        tv.setText(t);
+                        tv.setVisibility(View.VISIBLE);
+                        empty = true;
+
+                    }
+                    MyGlobalVariables.setData(s);
+                    if ((click && count == 2)) {
+                        click = false;
+                        s = MyGlobalVariables.getData();
+                        Log.d("String:", s);
+                        String ans = s.substring(s.indexOf("nsa51:"));
+                        Log.d("String", ans);
+                        Log.d("String", "This should come here");
+                        String[] l = new String[3];
+                        l = ans.split(";");
+                        count1 = 0;
+                        s = s.substring(0, s.indexOf("nsa51:"));
+                        for (int i = 0; i < 3; i++) {
+                            if (i == 0 && l[i].substring(l[i].indexOf(':') + 1).equals("17")) {
+                                count1++;
+                                s += "nsa51_score:1;";
+                                s += "nsa51_ans:17;";
+                            } else if (i == 1 && l[i].substring(l[i].indexOf(':') + 1).equals("7")) {
+                                count1++;
+                                s += "nsa52_score:1;";
+                                s += "nsa52_ans:7;";
+                            } else if (i == 2 && l[i].substring(l[i].indexOf(':') + 1).equals("72,76")) {
+                                count1++;
+                                s += "nsa53_score:1;";
+                                s += "nsa53_ans:72,76;";
+                            } else if (i == 2 && l[i].substring(l[i].indexOf(':') + 1).equals("78,82")) {
+                                count1++;
+                                s += "nsa53_score:1;";
+                                s += "nsa53_ans:78,82;";
+                            } else {
+                                if (i == 0) {
+                                    s += "nsa51_score:0;";
+                                    s += "nsa51_ans:" + l[i].substring(l[i].indexOf(':') + 1) + ";";
+                                } else if (i == 1) {
+                                    s += "nsa52_score:0;";
+                                    s += "nsa52_ans:" + l[i].substring(l[i].indexOf(':') + 1) + ";";
+                                } else if (i == 2) {
+                                    s += "nsa53_score:0;";
+                                    s += "nsa53_ans:" + l[i].substring(l[i].indexOf(':') + 1) + ";";
+                                }
+                            }
+                        }
+                        MyGlobalVariables.setData(s);
+                        TextView tv = (TextView) findViewById(R.id.message);
+                        tv.setVisibility(View.INVISIBLE);
+                        Date end = new Date();
+                        s = MyGlobalVariables.getTime();
+                        s += "nsa53_end:" + end.toString() + ";";
+                        s += "sec_ns_end:" + end.toString() + ";";
+                        String t = MyGlobalVariables.getData();
+                        t += s;
+                        MyGlobalVariables.setData(t);
+                        MyGlobalVariables.setTime("");
+                        create_textfile();
+                        Intent intent = new Intent(Set5Item3_Activity.this, SecRF_Activity.class);
+                        startActivity(intent);
+                    }
+                }
+                catch(Exception e)
+                {
+                    e.printStackTrace();
+                }
             }
         });
         

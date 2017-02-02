@@ -211,25 +211,42 @@ public class SP52_Activity extends Activity {
            }
        });
 	}
-	public static Bitmap decodeImage(Resources res,int resid,int WIDTH,int HIGHT){
-		 //Decode image size
-		 BitmapFactory.Options o = new BitmapFactory.Options();
-		 o.inJustDecodeBounds = true;
-		 BitmapFactory.decodeResource(res,resid,o);
+	public static Bitmap decodeImage(Resources res,int resId, int reqWidth,int reqHeight){
+		// First decode with inJustDecodeBounds=true to check dimensions
+		final BitmapFactory.Options options = new BitmapFactory.Options();
+		options.inJustDecodeBounds = true;
+		BitmapFactory.decodeResource(res, resId, options);
 
-		 //The new size we want to scale to
-		 final int REQUIRED_WIDTH=WIDTH;
-		 final int REQUIRED_HIGHT=HIGHT;
-		 //Find the correct scale value. It should be the power of 2.
-		 int scale=1;
-		 while(o.outWidth/scale/2>=REQUIRED_WIDTH && o.outHeight/scale/2>=REQUIRED_HIGHT)
-		     scale*=2;
+		// Calculate inSampleSize
+		options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
 
-		 //Decode with inSampleSize
-		 BitmapFactory.Options o2 = new BitmapFactory.Options();
-		 o2.inSampleSize=scale;
-		 return BitmapFactory.decodeResource(res,resid, o2);
+		// Decode bitmap with inSampleSize set
+		options.inJustDecodeBounds = false;
+		return BitmapFactory.decodeResource(res, resId, options);
+	}
+
+	public static int calculateInSampleSize(
+			BitmapFactory.Options options, int reqWidth, int reqHeight) {
+		// Raw height and width of image
+		final int height = options.outHeight;
+		final int width = options.outWidth;
+		int inSampleSize = 1;
+
+		if (height > reqHeight || width > reqWidth) {
+
+			final int halfHeight = height / 2;
+			final int halfWidth = width / 2;
+
+			// Calculate the largest inSampleSize value that is a power of 2 and keeps both
+			// height and width larger than the requested height and width.
+			while ((halfHeight / inSampleSize) >= reqHeight
+					&& (halfWidth / inSampleSize) >= reqWidth) {
+				inSampleSize *= 2;
+			}
 		}
+
+		return inSampleSize;
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

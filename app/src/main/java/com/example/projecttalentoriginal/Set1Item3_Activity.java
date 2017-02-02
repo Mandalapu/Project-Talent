@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Environment;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -43,6 +44,7 @@ public class Set1Item3_Activity extends Activity {
 		    	{
 		    		click = false;
 		    		String s=MyGlobalVariables.getData();
+					Log.d("String:", s);
 		    		String ans= s.substring(s.indexOf("nsa11:"));
 		       		String[] l = new String[3];
 		       		l = ans.split(";");count1=0;

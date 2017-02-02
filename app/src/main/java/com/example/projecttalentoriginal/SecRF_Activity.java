@@ -80,6 +80,8 @@ public class SecRF_Activity extends Activity {
 	    		Date end = new Date();
         		String s = MyGlobalVariables.getData();
         		s+="rf101_duration:45;rf101_end:"+end.toString()+";";
+				Date sec_rf_end = new Date();
+				s += "sec_rf_end:" +sec_rf_end.toString()+";";
         		MyGlobalVariables.setData(s);
 	    		Intent intent = new Intent(SecRF_Activity.this, SecW_Activity.class);
 	    	    startActivity(intent);

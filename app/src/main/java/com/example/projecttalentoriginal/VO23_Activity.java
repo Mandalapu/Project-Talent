@@ -137,7 +137,7 @@ public class VO23_Activity extends ActionBarActivity {
                     tv.setVisibility(View.INVISIBLE);
                     Date end = new Date();
                     s = MyGlobalVariables.getTime();
-                    s+="vo13_end:"+end.toString()+";";
+                    s+="vo23_end:"+end.toString()+";";
                     s+="sec_vo_end:"+end.toString()+";";
                     String t=MyGlobalVariables.getData();
                     t+=s;MyGlobalVariables.setData(t);
